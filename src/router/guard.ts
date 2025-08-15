@@ -16,7 +16,10 @@ const LOGIN_PATH = "/login"
 
 export function registerNavigationGuard(router: Router) {
   // 全局前置守卫
+
+
   router.beforeEach(async (to, _from) => {
+      console.log('前置路由');
     NProgress.start()
     const userStore = useUserStore()
     const permissionStore = usePermissionStore()

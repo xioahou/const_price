@@ -65,3 +65,13 @@ export function setCachedViews(views: string[]) {
   localStorage.setItem(CacheKey.CACHED_VIEWS, JSON.stringify(views))
 }
 // #endregion
+//存储动态路由
+export function setDynamicRoutes(routes: any) {
+  localStorage.setItem(CacheKey.DYNAMIC_ROUTER, JSON.stringify(routes))
+}
+export function getDynamicRoutes() {
+  return JSON.parse(localStorage.getItem(CacheKey.DYNAMIC_ROUTER) as string)
+}
+export function removeDynamicRoutes() {
+  localStorage.removeItem(CacheKey.DYNAMIC_ROUTER)
+}

@@ -9,4 +9,5 @@ export class CacheKey {
   static readonly VISITED_VIEWS = `${SYSTEM_NAME}-visited-views-key`
   static readonly CACHED_VIEWS = `${SYSTEM_NAME}-cached-views-key`
   static readonly INFO_TOKEN = `${SYSTEM_NAME}-info-token-key`
+  static readonly DYNAMIC_ROUTER = `${SYSTEM_NAME}-dynamic-router-key`
 }

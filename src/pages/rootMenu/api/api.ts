@@ -22,9 +22,4 @@ export function delMenuApi(id: number | string) {
     data: { id }
   })
 }
-export function getCatalogListApi() {
-  return request({
-    url: "/index.Index/getRoutes",
-    method: "get"
-  })
-}
+

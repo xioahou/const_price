@@ -89,12 +89,20 @@ export const constantRoutes: RouteRecordRaw[] = [
           title: "权限菜单"
         }
       },
-           {
+        {
         path: "role",
         component: () => import("@/pages/role/index.vue"),
         name: "Role",
         meta: {
           title: "角色管理"
+        }
+      },
+         {
+        path: "file",
+        component: () => import("@/pages/fileUpload/index.vue"),
+        name: "File",
+        meta: {
+          title: "文件上传"
         }
       }
     ]

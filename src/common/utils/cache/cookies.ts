@@ -23,3 +23,4 @@ export function setInfoToken(token: string) {
 export function removeInfoToken() {
   Cookies.remove(CacheKey.INFO_TOKEN)
 }
+

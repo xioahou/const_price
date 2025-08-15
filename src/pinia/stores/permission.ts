@@ -5,6 +5,7 @@ import { pinia } from "@/pinia"
 import { constantRoutes, dynamicRoutes, router } from "@/router"
 import { routerConfig } from "@/router/config"
 import { flatMultiLevelRoutes } from "@/router/helper"
+import {setDynamicRoutes,getDynamicRoutes} from '@@/utils/cache/local-storage'
 
 function hasPermission(roles: string[], route: RouteRecordRaw) {
   const routeRoles = route.meta?.roles
@@ -37,9 +38,13 @@ export const usePermissionStore = defineStore("permission", () => {
     // console.log(112333)
     const res: any = await getDynamicRoutesApi()
     // console.log(res)
-
+    if (res.code === 200) {
+  setDynamicRoutes(res.data.list)
+}
     // 2. 转换成 vue-router 可识别的格式
-    const asyncRoutes = transformRoutes(res.data.list)
+    console.log('动态路由',getDynamicRoutes());
+
+    const asyncRoutes = transformRoutes(getDynamicRoutes())
     // console.log(asyncRoutes)
 
     // 3. 添加到 router
