@@ -34,13 +34,13 @@ export const usePermissionStore = defineStore("permission", () => {
 
   // 根据角色生成可访问的 Routes（可访问的路由 = 常驻路由 + 有访问权限的动态路由）
   const setRoutes = async (roles: string[]) => {
-    console.log(112333)
+    // console.log(112333)
     const res: any = await getDynamicRoutesApi()
-    console.log(res)
+    // console.log(res)
 
     // 2. 转换成 vue-router 可识别的格式
     const asyncRoutes = transformRoutes(res.data.list)
-    console.log(asyncRoutes)
+    // console.log(asyncRoutes)
 
     // 3. 添加到 router
     asyncRoutes.forEach((route) => {
@@ -58,13 +58,13 @@ export const usePermissionStore = defineStore("permission", () => {
 
   // 统一设置
   const set = async (accessedRoutes: RouteRecordRaw[]) => {
-    console.log("accessedRoutes", accessedRoutes)
+    // console.log("accessedRoutes", accessedRoutes)
 
     // await
     routes.value = constantRoutes.concat(accessedRoutes)
     addRoutes.value = accessedRoutes
   }
-  console.log("setAllRouters", addRoutes)
+  // console.log("setAllRouters", addRoutes)
 
   return { routes, addRoutes, setRoutes, setAllRoutes }
 })
